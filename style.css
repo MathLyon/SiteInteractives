@@ -1,22 +1,59 @@
+/* Estilo geral */
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
     text-align: center;
+    transition: background-color 0.3s, color 0.3s, filter 0.3s;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-top: 20px;
+    animation: textPulse 2s infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% {
+        color: #333;
+    }
+    50% {
+        color: #ff4081;
+    }
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px;
+    margin: 15px;
+    padding: 10px 20px;
     font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff4081;
+    color: white;
     cursor: pointer;
+    transition: transform 0.3s;
 }
 
-main {
-    margin-top: 50px;
+button:hover {
+    transform: scale(1.1);
+}
+
+button#rotateButton {
+    background-color: #333;
 }
 
 .dark-mode {
-    background-color: black;
-    color: white;
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+main {
+    margin-top: 40px;
+}
+
+input[type="range"] {
+    margin: 15px;
+    cursor: pointer;
 }
