@@ -1,68 +1,80 @@
-/* Estilo geral e centralização */
-body, html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s, filter 0.3s;
-}
-
-.container {
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #d3d3d3; /* Cor de fundo inicial: cinza claro */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark-mode {
+    background-color: #2b2b2b;
+    color: #ffffff;
+  }
+  
+  #score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+  }
+  
+  .menu-container {
     text-align: center;
-    max-width: 500px;
-}
-
-h1 {
-    font-size: 2.5em;
+    margin-top: 50px;
+  }
+  
+  .menu-container h1 {
     margin-bottom: 20px;
-    animation: textPulse 2s infinite;
-}
-
-@keyframes textPulse {
-    0%, 100% { color: #333; }
-    50% { color: #ff4081; }
-}
-
-button {
-    margin: 15px;
+  }
+  
+  button {
     padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    background-color: #ff4081;
-    color: white;
+    font-size: 18px;
+    margin: 10px;
     cursor: pointer;
-    transition: transform 0.3s;
-}
-
-button:hover {
-    transform: scale(1.1);
-}
-
-button#rotateButton {
-    background-color: #333;
-}
-
-button#runAwayButton {
-    background-color: #4caf50;
+  }
+  
+  .game-options {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex; /* Alterado para flex */
+    flex-direction: row; /* Alinhamento horizontal */
+  }
+  
+  .game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 20px;
+    margin-top: 50px;
+  }
+  
+  .hole {
+    width: 200px;
+    height: 200px;
+    background-color: #023047;
+    border-radius: 50%;
     position: relative;
-}
-
-.dark-mode {
-    background-color: #333;
-    color: #f0f0f0;
-}
-
-input[type="range"] {
-    margin: 15px;
     cursor: pointer;
-    display: block;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
+  }
+  
+  .hole.mole::after {
+    content: '';
+    width: 120px;
+    height: 120px;
+    background-color: #ffb703;
+    border-radius: 50%;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+  

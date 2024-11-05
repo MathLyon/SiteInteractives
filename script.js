@@ -1,43 +1,43 @@
-// Troca entre modo claro e escuro
-document.getElementById('colorToggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-});
+let score = 0;
+let activeHole;
 
-// Controle de volume
-const volumeControl = document.getElementById('volumeControl');
-volumeControl.addEventListener('input', () => {
-    const volume = volumeControl.value;
-    console.log(`Volume: ${volume}`);
-    // Expanda com lógica de volume real
-});
+function randomHole() {
+  const holes = document.querySelectorAll('.hole');
+  const index = Math.floor(Math.random() * holes.length);
+  return holes[index];
+}
 
-// Controle de brilho
-const brightnessControl = document.getElementById('brightnessControl');
-brightnessControl.addEventListener('input', () => {
-    const brightness = brightnessControl.value;
-    document.body.style.filter = `brightness(${brightness}%)`;
-});
+function showMole() {
+  if (activeHole) {
+    activeHole.classList.remove('mole');
+  }
+  const hole = randomHole();
+  hole.classList.add('mole');
+  activeHole = hole;
+}
 
-// Animação de rotação do botão
-const rotateButton = document.getElementById('rotateButton');
-rotateButton.addEventListener('click', () => {
-    rotateButton.style.transform = 'rotate(360deg)';
-    setTimeout(() => {
-        rotateButton.style.transform = 'rotate(0deg)';
-    }, 600);
-});
+function hitMole(hole) {
+  if (hole.classList.contains('mole')) {
+    score++;
+    document.getElementById('score').textContent = `Pontuação: ${score}`;
+    hole.classList.remove('mole');
+  }
+}
 
-// Botão que foge do mouse
-const runAwayButton = document.getElementById('runAwayButton');
-runAwayButton.addEventListener('mouseover', () => {
-    const containerWidth = document.querySelector('.container').offsetWidth;
-    const containerHeight = document.querySelector('.container').offsetHeight;
+function restartGame() {
+  score = 0;
+  document.getElementById('score').textContent = `Pontuação: ${score}`;
+  if (activeHole) {
+    activeHole.classList.remove('mole');
+  }
+}
 
-    // Gera posições aleatórias dentro dos limites do container
-    const randomX = Math.random() * (containerWidth - runAwayButton.offsetWidth);
-    const randomY = Math.random() * (containerHeight - runAwayButton.offsetHeight);
+function goToMenu() {
+  window.location.href = 'index.html';
+}
 
-    runAwayButton.style.position = 'absolute';
-    runAwayButton.style.left = `${randomX}px`;
-    runAwayButton.style.top = `${randomY}px`;
-});
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
+
+setInterval(showMole, 1000);

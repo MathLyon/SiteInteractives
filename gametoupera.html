@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Acerte a Toupeira</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="score">Pontuação: 0</div>
+  <div class="game-options">
+    <button onclick="goToMenu()">Voltar ao Menu</button>
+    <button onclick="toggleDarkMode()">Modo Escuro</button>
+    <button onclick="restartGame()">Reiniciar</button>
+  </div>
+  <div class="game-container">
+    <div class="hole" onclick="hitMole(this)"></div>
+    <div class="hole" onclick="hitMole(this)"></div>
+    <div class="hole" onclick="hitMole(this)"></div>
+    <div class="hole" onclick="hitMole(this)"></div>
+    <div class="hole" onclick="hitMole(this)"></div>
+    <div class="hole" onclick="hitMole(this)"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
