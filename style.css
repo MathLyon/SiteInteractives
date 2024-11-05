@@ -78,3 +78,25 @@
     left: 40px;
   }
   
+  /* Estilo e animação dos confetes */
+  .confetti {
+    position: absolute;
+    width: 10px; /* Largura do confete */
+    height: 10px; /* Altura do confete */
+    background-color: #ffcc00; /* Cor do confete */
+    animation: fall 1s ease-in forwards;
+    opacity: 0; /* Inicia invisível */
+  }
+  
+  /* Animação de queda do confete */
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1; /* Torna o confete visível */
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0; /* Torna o confete invisível ao final */
+    }
+  }
+  

@@ -18,9 +18,14 @@ function showMole() {
 
 function hitMole(hole) {
   if (hole.classList.contains('mole')) {
-    score++;
+    score += 10; // Aumenta a pontuação em 10 em vez de 1
     document.getElementById('score').textContent = `Pontuação: ${score}`;
     hole.classList.remove('mole');
+    
+    // Chama a função para soltar confetes a cada 100 pontos
+    if (score % 100 === 0) {
+      celebrate();
+    }
   }
 }
 
@@ -41,3 +46,28 @@ function toggleDarkMode() {
 }
 
 setInterval(showMole, 1000);
+
+// Função para criar confetes
+function celebrate() {
+  const confettiCount = 100; // Número de confetes
+  for (let i = 0; i < confettiCount; i++) {
+    createConfetti();
+  }
+}
+
+// Função para criar um único confete
+function createConfetti() {
+  const confetti = document.createElement('div');
+  confetti.className = 'confetti';
+  document.body.appendChild(confetti);
+
+  // Define posições aleatórias e animações
+  confetti.style.left = Math.random() * window.innerWidth + 'px';
+  confetti.style.opacity = Math.random();
+  confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+  
+  // Remove o confete após 1 segundo
+  setTimeout(() => {
+    confetti.remove();
+  }, 1000);
+}
