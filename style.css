@@ -1,26 +1,30 @@
-/* Estilo geral */
-body {
+/* Estilo geral e centralização */
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    text-align: center;
     transition: background-color 0.3s, color 0.3s, filter 0.3s;
+}
+
+.container {
+    text-align: center;
+    max-width: 500px;
 }
 
 h1 {
     font-size: 2.5em;
-    color: #333;
-    margin-top: 20px;
+    margin-bottom: 20px;
     animation: textPulse 2s infinite;
 }
 
 @keyframes textPulse {
-    0%, 100% {
-        color: #333;
-    }
-    50% {
-        color: #ff4081;
-    }
+    0%, 100% { color: #333; }
+    50% { color: #ff4081; }
 }
 
 button {
@@ -44,16 +48,21 @@ button#rotateButton {
     background-color: #333;
 }
 
+button#runAwayButton {
+    background-color: #4caf50;
+    position: relative;
+}
+
 .dark-mode {
     background-color: #333;
     color: #f0f0f0;
 }
 
-main {
-    margin-top: 40px;
-}
-
 input[type="range"] {
     margin: 15px;
     cursor: pointer;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Interativo com Mais Animações</title>
+    <title>Site Interativo e Divertido</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Experimente o Site Interativo!</h1>
-        <button id="colorToggle">Trocar Cor</button>
-        <button id="rotateButton">Girar</button>
-    </header>
-    <main>
-        <label for="volumeControl">Controle de Volume:</label>
-        <input type="range" id="volumeControl" min="0" max="100" value="50">
-        
-        <label for="brightnessControl">Controle de Brilho:</label>
-        <input type="range" id="brightnessControl" min="50" max="150" value="100">
-    </main>
+    <div class="container">
+        <header>
+            <h1>Bem-vindo ao Site Interativo!</h1>
+        </header>
+        <main>
+            <button id="colorToggle">Trocar Cor</button>
+            <button id="rotateButton">Girar</button>
+            <button id="runAwayButton">Clique se conseguir!</button>
+            
+            <div class="controls">
+                <label for="volumeControl">Controle de Volume:</label>
+                <input type="range" id="volumeControl" min="0" max="100" value="50">
+                
+                <label for="brightnessControl">Controle de Brilho:</label>
+                <input type="range" id="brightnessControl" min="50" max="150" value="100">
+            </div>
+        </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
