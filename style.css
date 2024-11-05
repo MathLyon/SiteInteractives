@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+main {
+    margin-top: 50px;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
